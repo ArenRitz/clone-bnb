@@ -9,8 +9,8 @@ interface ModalProps {
 	onSubmit: () => void;
 	actionLabel: string;
 	title?: string;
-	body?: string;
-	footer?: string;
+	body?: React.ReactElement;
+	footer?: React.ReactElement;
 	disabled?: boolean;
 	secondaryAction?: () => void;
 	secondaryActionLabel?: string;
