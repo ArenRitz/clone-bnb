@@ -46,6 +46,7 @@ const RentModal = () => {
     });
 
     const category = watch('category');
+	const location = watch('location');
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {shouldDirty: true, shouldValidate: true, shouldTouch: true});
     };
@@ -103,11 +104,15 @@ const RentModal = () => {
 					subtitle='Enter a location'
 				/>
 				<CountrySelect
-					onChange={() => {}}
+					value={location}
+					onChange={(value) => setCustomValue('location', value)}
 				/>
 			</div>
 		);
 	}
+
+
+	
 
 	return (
 		<Modal
