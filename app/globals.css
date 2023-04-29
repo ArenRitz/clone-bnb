@@ -9,3 +9,9 @@ body,
 }
 
 
+.leaflet-bottom,
+.leaflet-top,
+.leaflet-control,
+.leaflet-pane {
+	z-index: 0 !important;
+}
