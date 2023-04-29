@@ -15,6 +15,9 @@ const CategoryInput: React.FC<CategoryInputProps> = ({icon: Icon, label, selecte
         ${selected ? 'border-black' : 'border-neutral-200'}
         `}>
             <Icon size={30}/>
+            <div className="font-semibold">
+                {label}
+            </div>
         </div>
      );
 }
