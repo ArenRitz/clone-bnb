@@ -103,7 +103,7 @@ const RentModal = () => {
 					subtitle='Enter a location'
 				/>
 				<CountrySelect
-
+					onChange={() => {}}
 				/>
 			</div>
 		);
