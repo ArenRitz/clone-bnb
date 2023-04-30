@@ -3,6 +3,7 @@ import ClientOnly from '@/app/components/ClientOnly';
 import EmptyState from '@/app/components/EmptyState';
 import ListingClient from './ListingClient';
 import getCurrentUser from '@/app/actions/getCurrentUser';
+import getReservationById from '@/app/actions/getReservations';
 
 
 interface IParams {
@@ -12,6 +13,7 @@ interface IParams {
 const ListingPage = async ({ params }: { params: IParams }) => {
 	const listing = await getListingById(params);
     const currentUser = await getCurrentUser();
+	const reservation = await getReservationById(params);
 
 	if (!listing) {
 		return (
@@ -23,7 +25,7 @@ const ListingPage = async ({ params }: { params: IParams }) => {
 
 	return (
 		<ClientOnly>
-			<ListingClient listing={listing} currentUser={currentUser} />
+			<ListingClient listing={listing} currentUser={currentUser} reservations={reservation} />
 		</ClientOnly>
 	);
 };
